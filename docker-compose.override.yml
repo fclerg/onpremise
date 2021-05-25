@@ -1,0 +1,96 @@
+version: "3.4"
+
+services:
+  smtp:
+    networks:
+      - sentry-net
+  memcached:
+    networks:
+      - sentry-net
+  redis:
+    networks:
+      - sentry-net
+  postgres:
+    networks:
+      - sentry-net
+  zookeeper:
+    networks:
+      - sentry-net
+  kafka:
+    networks:
+      - sentry-net
+  clickhouse:
+    networks:
+      - sentry-net
+  geoipupdate:
+    networks:
+      - sentry-net
+  snuba-api:
+    networks:
+      - sentry-net
+  snuba-consumer:
+    networks:
+      - sentry-net
+  snuba-outcomes-consumer:
+    networks:
+      - sentry-net
+  snuba-sessions-consumer:
+    networks:
+      - sentry-net
+  snuba-transactions-consumer:
+    networks:
+      - sentry-net
+  snuba-replacer:
+    networks:
+      - sentry-net
+  snuba-subscription-consumer-events:
+    networks:
+      - sentry-net
+  snuba-subscription-consumer-transactions:
+    networks:
+      - sentry-net
+  snuba-cleanup:
+    networks:
+      - sentry-net
+  snuba-transactions-cleanup:
+    networks:
+      - sentry-net
+  symbolicator:
+    networks:
+      - sentry-net
+  symbolicator-cleanup:
+    networks:
+      - sentry-net
+  web:
+    networks:
+      - sentry-net
+  cron:
+    networks:
+      - sentry-net
+  worker:
+    networks:
+      - sentry-net
+  ingest-consumer:
+    networks:
+      - sentry-net
+  post-process-forwarder:
+    networks:
+      - sentry-net
+  subscription-consumer-events:
+    networks:
+      - sentry-net
+  subscription-consumer-transactions:
+    networks:
+      - sentry-net
+  sentry-cleanup:
+    networks:
+      - sentry-net
+  nginx:
+    networks:
+      - sentry-net
+  relay:
+    networks:
+      - sentry-net
+networks:
+  sentry-net:
+    external: true
